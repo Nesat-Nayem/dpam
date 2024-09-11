@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\ProductTrackController;
 use App\Http\Controllers\Frontend\ReviewController;
+use App\Http\Controllers\Frontend\UserOnlineTestController;
 use App\Http\Controllers\Frontend\UserOrderController;
 use App\Http\Controllers\Frontend\UserVendorReqeustController;
 use App\Http\Controllers\Frontend\WishlistController;
@@ -111,7 +112,8 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
 
     // Online test
 
-    // Route::get('online-test', [UserOnlineTestController::class, 'index'])->name('onlinetest');
+    Route::get('online-test', [UserOnlineTestController::class, 'index'])->name('online-test.index');
+    Route::post('online-test', [UserOnlineTestController::class, 'submit'])->name('online-test.submit');
     /** Order Routes */
     Route::get('orders', [UserOrderController::class, 'index'])->name('orders.index');
     Route::get('orders/show/{id}', [UserOrderController::class, 'show'])->name('orders.show');
@@ -124,8 +126,8 @@ Route::group(['middleware' =>['auth', 'verified'], 'prefix' => 'user', 'as' => '
     Route::get('reviews', [ReviewController::class, 'index'])->name('review.index');
 
     /** Vendor request route */
-    Route::get('vendor-request', [UserVendorReqeustController::class, 'index'])->name('vendor-request.index');
-    Route::post('vendor-request', [UserVendorReqeustController::class, 'create'])->name('vendor-request.create');
+    // Route::get('vendor-request', [UserVendorReqeustController::class, 'index'])->name('vendor-request.index');
+    // Route::post('vendor-request', [UserVendorReqeustController::class, 'create'])->name('vendor-request.create');
 
 
 

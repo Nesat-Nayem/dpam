@@ -235,6 +235,10 @@
                     href="{{ route('admin.subscribers.index') }}"><i class="fas fa-user"></i>
                     <span>Subscribers</span></a></li>
 
+            <li><a class="nav-link {{ setActive(['admin.online-test.*']) }}"
+                    href="{{ route('admin.online-test.index') }}"><i class="fas fa-user"></i>
+                    <span>Online Test</span></a></li>
+
             <li><a class="nav-link" href="{{ route('admin.settings.index') }}"><i class="fas fa-wrench"></i>
                     <span>Settings</span></a></li>
 

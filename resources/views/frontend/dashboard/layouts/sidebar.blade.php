@@ -15,12 +15,13 @@
       @endif
 
 
+
       <li><a class="{{setActive(['user.orders.*'])}}" href="{{route('user.orders.index')}}"><i class="fas fa-list-ul"></i> Orders</a></li>
       <li><a class="{{setActive(['user.review.*'])}}" href="{{route('user.review.index')}}"><i class="far fa-star"></i> Reviews</a></li>
 
       <li><a class="{{setActive(['user.profile'])}}" href="{{route('user.profile')}}"><i class="far fa-user"></i> My Profile</a></li>
       <li><a class="{{setActive(['user.address.*'])}}" href="{{route('user.address.index')}}"><i class="fal fa-gift-card"></i> Addresses</a></li>
-      <li><a class="{{setActive(['user.address.*'])}}" href="{{route('user.address.index')}}"><i class="fal fa-gift-card"></i> Online Test</a></li>
+      <li><a class="{{setActive(['user.online-test.*'])}}" href="{{route('user.online-test.index')}}"><i class="fal fa-gift-card"></i> Online Test</a></li>
       {{-- @if (auth()->user()->role !== 'vendor')
       <li><a class="{{setActive(['user.vendor-request.*'])}}" href="{{route('user.vendor-request.index')}}"><i class="far fa-user"></i> Request to be vendor</a></li>
       @endif --}}

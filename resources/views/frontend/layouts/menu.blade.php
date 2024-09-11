@@ -14,8 +14,10 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="relative_contect d-flex">
+                    <!-- <div class="wsus_menu_category_bar"> -->
                     <div class="wsus_menu_category_bar">
-                        <i class="far fa-bars"></i>
+                        <!-- <i class="far fa-bars"></i> -->
+                         books
                     </div>
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
                         {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}}

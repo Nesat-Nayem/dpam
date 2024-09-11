@@ -23,6 +23,7 @@ use App\Http\Controllers\Backend\FooterInfoController;
 use App\Http\Controllers\Backend\FooterSocialController;
 use App\Http\Controllers\Backend\HomePageSettingController;
 use App\Http\Controllers\Backend\ManageUserController;
+use App\Http\Controllers\Backend\OnlineTestController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PaymentSettingController;
 use App\Http\Controllers\Backend\PaypalSettingController;
@@ -180,6 +181,10 @@ Route::delete('blog-comments/{id}/destory', [BlogCommentController::class, 'dest
 Route::get('subscribers', [SubscribersController::class, 'index'])->name('subscribers.index');
 Route::delete('subscribers/{id}', [SubscribersController::class, 'destory'])->name('subscribers.destory');
 Route::post('subscribers-send-mail', [SubscribersController::class, 'sendMail'])->name('subscribers-send-mail');
+
+// online test
+
+Route::resource('online-test', OnlineTestController::class);
 
 /** Advertisement Routes */
 Route::get('advertisement', [AdvertisementController::class, 'index'])->name('advertisement.index');
