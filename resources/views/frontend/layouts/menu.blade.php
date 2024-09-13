@@ -15,14 +15,15 @@
             <div class="col-xl-12">
                 <div class="relative_contect d-flex">
                     <!-- <div class="wsus_menu_category_bar"> -->
-                    <div class="wsus_menu_category_bar">
+                    <div style="font-size: 15px; background: white;  color: black;" class="wsus_menu_category_bar">
                         <!-- <i class="far fa-bars"></i> -->
-                         books
+                 
+                             Books
                     </div>
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
-                        {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}}
+                        <!-- {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}} -->
 
-                        @foreach ($categories as $category)
+                        <!-- @foreach ($categories as $category)
                         <li><a class="{{count($category->subCategories) > 0 ? 'wsus__droap_arrow' : ''}}" href="{{route('products.index', ['category' => $category->slug])}}"><i class="{{$category->icon}}"></i> {{$category->name}} </a>
                             @if(count($category->subCategories) > 0)
                                 <ul class="wsus_menu_cat_droapdown">
@@ -41,7 +42,89 @@
                                 </ul>
                             @endif
                         </li>
-                        @endforeach
+                        @endforeach -->
+
+                        <!-- 2nd time  -->
+
+<!-- 
+                        @foreach ($categories as $category)
+    <li><a class="{{count($category->subCategories) > 0 ? 'wsus__droap_arrow' : ''}}" href="{{route('products.index', ['category' => $category->slug])}}"><i class="{{$category->icon}}"></i> {{$category->name}} </a>
+        @if(count($category->subCategories) > 0)
+            <ul class="wsus_menu_cat_droapdown">
+                @foreach ($category->subCategories as $subCategory)
+                    <li><a href="{{route('products.index', ['subcategory' => $subCategory->slug])}}">{{$subCategory->name}} <i class="{{count($subCategory->childCategories) > 0 ? 'fas fa-angle-right' : ''}}"></i></a>
+                        @if(count($subCategory->childCategories) > 0)
+                        <ul class="wsus__sub_category">
+                            @foreach ($subCategory->childCategories as $childCategory)
+                                <li><a href="{{route('products.index', ['childcategory' => $childCategory->slug])}}">{{$childCategory->name}} <i class="{{count($childCategory->grandChildCategories) > 0 ? 'fas fa-angle-right' : ''}}"></i></a>
+                                    @if(count($childCategory->grandChildCategories) > 0)
+                                    <ul class="wsus__grand_child_category">
+                                        @foreach ($childCategory->grandChildCategories as $grandChildCategory)
+                                            <li><a href="{{route('products.index', ['grandchildcategory' => $grandChildCategory->slug])}}">{{$grandChildCategory->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </li>
+@endforeach -->
+
+<!-- third time  -->
+
+@foreach ($categories as $category)
+    <li>
+        <a class="{{count($category->subCategories) > 0 ? 'wsus__droap_arrow' : ''}}" href="{{route('products.index', ['category' => $category->slug])}}">
+            <i class="{{$category->icon}}"></i> {{$category->name}}
+        </a>
+        @if(count($category->subCategories) > 0)
+            <ul class="wsus_menu_cat_droapdown">
+                @foreach ($category->subCategories as $subCategory)
+                    <li>
+                        <a href="{{route('products.index', ['subcategory' => $subCategory->slug])}}">
+                            {{$subCategory->name}} 
+                            @if(count($subCategory->childCategories) > 0)
+                                <i class="fas fa-angle-right"></i>
+                            @endif
+                        </a>
+                        @if(count($subCategory->childCategories) > 0)
+                            <ul class="wsus__sub_category">
+                                @foreach ($subCategory->childCategories as $childCategory)
+                                    <li>
+                                        <a href="{{route('products.index', ['childcategory' => $childCategory->slug])}}">
+                                            {{$childCategory->name}}
+                                            @if(count($childCategory->grandChildCategories) > 0)
+                                                <i class="fas fa-angle-right"></i>
+                                            @endif
+                                        </a>
+                                        @if(count($childCategory->grandChildCategories) > 0)
+                                            <ul class="wsus__grand_child_category">
+                                                @foreach ($childCategory->grandChildCategories as $grandChildCategory)
+                                                    <li>
+                                                        <a href="{{route('products.index', ['grandchildcategory' => $grandChildCategory->slug])}}">
+                                                            {{$grandChildCategory->name}}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </li>
+@endforeach
+
+
 
                         {{-- <li><a href="#"><i class="fal fa-gem"></i> View All Categories</a></li> --}}
                     </ul>
@@ -51,8 +134,10 @@
 
                         <li><a class="{{setActive(['vendor.index'])}}" href="{{route('vendor.index')}}">vendors</a></li>
                         <li><a class="{{setActive(['flash-sale'])}}" href="{{route('flash-sale')}}">flash Sale</a></li>
-                        <li><a class="{{setActive(['blog'])}}" href="{{route('blog')}}">blog</a></li>
-                        <li><a class="{{setActive(['about'])}}" href="{{route('about')}}">about</a></li>
+                        <!-- <li><a class="{{setActive(['blog'])}}" href="{{route('blog')}}">blog</a></li>
+                        <li><a class="{{setActive(['about'])}}" href="{{route('about')}}">about</a></li> -->
+                        <li><a class="{{setActive(['blog'])}}" href="{{route('blog')}}">online class</a></li>
+                        <li><a class="{{setActive(['about'])}}" href="{{route('about')}}">online exam</a></li>
                         <li><a class="{{setActive(['contact'])}}" href="{{route('contact')}}">contact</a></li>
 
 

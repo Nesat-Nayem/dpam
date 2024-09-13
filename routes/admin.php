@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\FooterGridThreeController;
 use App\Http\Controllers\Backend\FooterGridTwoController;
 use App\Http\Controllers\Backend\FooterInfoController;
 use App\Http\Controllers\Backend\FooterSocialController;
+use App\Http\Controllers\Backend\GrandChildCategoryController;
 use App\Http\Controllers\Backend\HomePageSettingController;
 use App\Http\Controllers\Backend\ManageUserController;
 use App\Http\Controllers\Backend\OnlineTestController;
@@ -73,6 +74,12 @@ Route::resource('sub-category', SubCategoryController::class);
 Route::put('child-category/change-status', [ChildCategoryController::class, 'changeStatus'])->name('child-category.change-status');
 Route::get('get-subcategories', [ChildCategoryController::class, 'getSubCategories'])->name('get-subcategories');
 Route::resource('child-category', ChildCategoryController::class);
+
+/** Grand Child Category Route */
+Route::put('grand-child-category/change-status', [GrandChildCategoryController::class, 'changeStatus'])->name('grand-child-category.change-status');
+Route::get('get-child-categories', [GrandChildCategoryController::class, 'getChildCategories'])->name('get-child-categories');
+Route::resource('grand-child-category', GrandChildCategoryController::class);
+
 
 /** Brand routes */
 Route::put('brand/change-status', [BrandController::class, 'changeStatus'])->name('brand.change-status');

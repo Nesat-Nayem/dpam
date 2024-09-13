@@ -13,6 +13,7 @@ use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class SubCategoryDataTable extends DataTable
+
 {
     /**
      * Build the DataTable class.

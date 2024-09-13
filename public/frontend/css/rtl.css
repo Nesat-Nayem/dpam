@@ -145,6 +145,7 @@
 	-o-transform: rotateY(180deg);
 }
 
+
 .wsus__sub_category {
 	left: auto;
 	right: 105%;
@@ -154,6 +155,32 @@
 	left: auto;
 	right: 100%;
 }
+
+.wsus_menu_cat_droapdown,
+.wsus__sub_category,
+.wsus__grand_child_category {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 200px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.wsus_menu_cat_droapdown > li:hover > .wsus__sub_category,
+.wsus__sub_category > li:hover > .wsus__grand_child_category {
+    opacity: 1;
+    visibility: visible;
+}
+
+.wsus_menu_cat_droapdown > li,
+.wsus__sub_category > li,
+.wsus__grand_child_category > li {
+    position: relative;
+}
+
 
 .slick-list {
 	direction: ltr;

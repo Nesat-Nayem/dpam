@@ -787,6 +787,7 @@ header {
   left: 100%;
 }
 
+
 .wsus__sub_category {
   width: 250px;
   background: #fff;
@@ -813,6 +814,37 @@ header {
   visibility: visible;
   left: 100%;
 }
+
+.wsus__grand_child_category {
+  width: 250px;
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 105%;
+  padding: 0;
+  border: 1px solid #def0ff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s ease;
+  -moz-transition: all linear 0.3s ease;
+  -ms-transition: all linear 0.3s ease;
+  -o-transition: all linear 0.3s ease;
+  /* height: auto;
+  max-height: 570px;
+  overflow-y: auto; */
+  height: 570px;
+}
+
+.wsus__sub_category li:hover .wsus__grand_child_category {
+  opacity: 1;
+  visibility: visible;
+  left: 100%;
+}
+
 
 .toggle_menu.\.show_category {
   display: block;
